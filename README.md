@@ -1,5 +1,7 @@
 # Projet Daretna - Architecture Monorepo
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fahmiwiame2-crypto/daretna-platform)
+
 Ce projet a été restructuré pour suivre une architecture professionnelle Full Stack.
 
 ## Structure du Projet
