@@ -6,7 +6,11 @@ const db = require('./db');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins for simplicity in this demo
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Basic Route
@@ -58,6 +62,8 @@ module.exports = app;
 // Only listen if run directly
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`🚀 Serveur Backend démarré sur le port ${PORT}`);
-  });
+  console.log(`🚀 Serveur Backend démarré sur le port ${PORT}`);
+});
+
+module.exports = app;
 }
