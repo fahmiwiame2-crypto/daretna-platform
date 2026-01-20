@@ -34,7 +34,7 @@ app.get('/api/health', async (req, res) => {
 });
 
 // TEST ROUTE: Insert a dummy user to verify MySQL write access
-app.post('/api/test-insert', async (req, res) => {
+app.get('/api/test-insert', async (req, res) => {
   try {
     const id = require('crypto').randomUUID();
     const email = `test-${Date.now()}@example.com`;
@@ -52,6 +52,12 @@ app.post('/api/test-insert', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Serveur Backend démarré sur le port ${PORT}`);
-});
+// Export for Vercel
+module.exports = app;
+
+// Only listen if run directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Serveur Backend démarré sur le port ${PORT}`);
+  });
+}
