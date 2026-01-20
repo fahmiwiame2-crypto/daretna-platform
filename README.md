@@ -1,38 +1,20 @@
-# Projet Daretna - Architecture Monorepo
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fahmiwiame2-crypto/daretna-platform)
+# Run and deploy your AI Studio app
 
-Ce projet a été restructuré pour suivre une architecture professionnelle Full Stack.
+This contains everything you need to run your app locally.
 
-## Statut du Déploiement
-- **Frontend** : React + Vite
-- **Backend** : Node.js + Express (Serverless)
-- **Database** : MySQL (Doit être hébergée en externe pour la prod)
+View your app in AI Studio: https://ai.studio/apps/drive/1eHxemc3e497aTHfT8pbXQcBPQIp1CqBa
 
-## Structure du Projet
+## Run Locally
 
-### 📂 frontend/
-Contient l'application React (Vite).
-- **Lancer l'app** :
-  ```bash
-  cd frontend
-  npm install
-  npm run dev
-  ```
-- **Base de données simulée** : `frontend/services/db.ts` (localStorage).
+**Prerequisites:**  Node.js
 
-### 📂 backend/
-Contient le serveur API (Node.js / Express).
-- **Lancer le serveur** :
-  ```bash
-  cd backend
-  npm install
-  npm start
-  ```
-- *Note : Pour l'instant, le frontend utilise encore la DB locale. Le backend est prêt pour la future migration.*
 
-### 📂 database/
-Contient la documentation et les schémas de la base de données.
-
----
-**Développé avec ❤️ pour Daretna.**
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
