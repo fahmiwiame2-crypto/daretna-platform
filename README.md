@@ -4,6 +4,11 @@
 
 Ce projet a été restructuré pour suivre une architecture professionnelle Full Stack.
 
+## Statut du Déploiement
+- **Frontend** : React + Vite
+- **Backend** : Node.js + Express (Serverless)
+- **Database** : MySQL (Doit être hébergée en externe pour la prod)
+
 ## Structure du Projet
 
 ### 📂 frontend/
