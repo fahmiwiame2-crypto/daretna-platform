@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* The original .animate-slide-up is replaced by a new one outside this layer */
+}
+
+@layer utilities {
+    .glass-card {
+        @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+    }
+
+    .glass-nav {
+        @apply bg-white/80 dark:bg-slate-900/60 backdrop-blur-md border-b border-white/20 dark:border-white/10;
+    }
+
+    .mesh-gradient {
+        background-color: #ffffff;
+        background-image:
+            radial-gradient(at 0% 0%, hsla(338, 78%, 95%, 1) 0, transparent 50%),
+            radial-gradient(at 50% 0%, hsla(225, 39%, 95%, 1) 0, transparent 50%),
+            radial-gradient(at 100% 0%, hsla(338, 78%, 95%, 1) 0, transparent 50%);
+        background-attachment: fixed;
+    }
+
+    .dark .mesh-gradient {
+        background-color: #0f172a;
+        background-image:
+            radial-gradient(at 0% 0%, hsla(338, 78%, 10%, 1) 0, transparent 50%),
+            radial-gradient(at 50% 0%, hsla(225, 39%, 10%, 1) 0, transparent 50%),
+            radial-gradient(at 100% 0%, hsla(338, 78%, 10%, 1) 0, transparent 50%);
+    }
+
+    .spotlight-cursor {
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(233, 30, 99, 0.08) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        border-radius: 50%;
+        transition: width 0.3s, height 0.3s;
+    }
+
+    .dark .spotlight-cursor {
+        background: radial-gradient(circle, rgba(233, 30, 99, 0.15) 0%, transparent 70%);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes bounce-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+}

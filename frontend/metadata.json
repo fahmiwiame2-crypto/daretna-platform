@@ -1,0 +1,5 @@
+{
+  "name": "Daretprojet",
+  "description": "A digital Tontine (Daret) application for Morocco allowing users to manage savings groups, track payments, and utilize AI for trust scoring.",
+  "requestFramePermissions": []
+}
